@@ -1,0 +1,19 @@
+body{
+   margin: 0px;
+   padding: 0px;
+}
+body{
+   color: #787878;
+   font-family: Verdana;
+}
+.header,a{
+   font-family: Trajan Pro;
+}
+
+a{
+   color: inherit;
+   text-decoration: none;
+}
+a:hover{
+   text-decoration: underline;
+}
