@@ -4,6 +4,10 @@
 
    <link rel="stylesheet" href="master.css" />
    <link rel="stylesheet" href="main.css" />
+
+   <script type="text/javascript" src="../jquery/jquery.min.js"></script>
+   <script type="text/javascript" src="../jquery/jquery-ui.min.js"></script>
+   <script type="text/javascript" src="gallery-section.js"></script>
 </head>
 <body>
 
@@ -57,18 +61,16 @@
       <img src="img/logo.png" />
    </div>
 
-   <div class="draggable caption">
+   <div class="caption">
       <div class="body">
-         <div class="tabs">
-            <span class="tab"></span> <span class="active tab"></span> <span class="tab"></span>
-         </div>
+         <div class="tabs"></div>
          <div class="header">
             Conceito E Classe
             <br />
             acima de tudo
          </div>
          <div class="content">
-            Lore ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam eret volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation illamcorper suspicit.
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam eret volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation illamcorper suspicit.
          </div>
       </div>
    </div>
@@ -148,4 +150,11 @@
 </div>
 
 </body>
+<script type="text/javascript">
+   $('.caption').draggable();
+
+   $('.gallery .window').css('overflow', 'hidden');
+   $.each($('.gallery .image-container img').on('click', function(){ gallery.show(this.index);}), function(i, val){ val.index = i;} );
+   gallery.show(0);
+</script>
 </html>
