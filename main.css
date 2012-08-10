@@ -124,6 +124,12 @@ ul.nav a{
 .gallery .caption .body .tabs .tab.active{
    background-color: #5fd2d5;
 }
+.tab-content{
+   display: none;
+}
+.tab-content.active{
+   display: inline;
+}
 .gallery .caption{
    font-size: 12px;
    color: #838383;
@@ -138,6 +144,8 @@ ul.nav a{
 .gallery .caption .header{
    font-size: 1.4em;
    margin-bottom: 1em;
+   overflow: visible;
+   white-space: nowrap;
 }
 .gallery .caption:after{
    content: '';
@@ -238,17 +246,17 @@ ul.nav a{
 .featured .first.row{
    overflow: hidden;
 }
-.featured .first.row>img{
+.featured .first.row img{
    border: 5px solid #DDDFDE;
    margin: 25px 10px 0px;
 }
-.featured .second.row>img{
+.featured .second.row img{
    margin: 25px 5px 0px;
 }
-.featured .row>img:first-of-type{
+.featured .row a:first-of-type img{
    margin-left: 0px;
 }
-.featured .row>img:last-of-type{
+.featured .row a:last-of-type img{
    margin-right: 0px;
 }
 

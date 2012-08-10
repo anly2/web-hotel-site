@@ -5,8 +5,9 @@ gallery = new Object();
 gallery.param = new Object();
 gallery.param.image    = {width: 954};
 gallery.param.trample  = {width: 160};
-gallery.param.duration = {'stretch': 500,    'slide': 750,     'trample': 1000};
-gallery.param.easing   = {'stretch': 'swing', 'slide': 'linear', 'trample': 'swing'};
+gallery.param.duration = {'stretch': 500,      'slide': 750,     'trample': 1000};
+gallery.param.easing   = {'stretch': 'linear', 'slide': 'linear', 'trample': 'swing'};
+gallery.param.stable   = true;
 
 // Private variables
 // DO NOT EDIT!
@@ -20,13 +21,17 @@ gallery.previous = function(){
    //Stretch
    if(this.state < 1){
       $(this.imgs[this.active]).animate( {'margin-left': 0, 'margin-right': 0}, {'duration': this.param.duration.stretch, 'easing': this.param.easing.stretch, 'complete': function(){gallery.state=1; gallery.previous();} } );
+
+      if(this.param.stable)
+         $(this.imgs[0].parentNode).animate( {'margin-left': '-='+this.param.trample.width}, {'duration': this.param.duration.stretch, 'easing': this.param.easing.stretch} );
+
       return true;
    }
 
    //Move left
    if(this.offset >= 0){
       this.state = 2;
-      $(this.imgs[0].parentNode).animate( {'margin-left': '+='+this.param.image.width}, {'duration': this.param.duration.slide, 'easing': this.param.easing.slide, 'complete': function(){$(gallery.tabs[gallery.active]).removeClass('active'); gallery.active--;  $(gallery.imgs[gallery.active]).addClass('active'); $(gallery.tabs[gallery.active]).addClass('active'); gallery.previous();}} );
+      $(this.imgs[0].parentNode).animate( {'margin-left': '+='+this.param.image.width}, {'duration': this.param.duration.slide, 'easing': this.param.easing.slide, 'complete': function(){$(gallery.tabs[gallery.active]).removeClass('active'); gallery.active--;  $(gallery.imgs[gallery.active]).addClass('active'); $(gallery.tabs[gallery.active]).addClass('active'); gallery.showTab(gallery.active); gallery.previous();}} );
 
       $(this.imgs[this.active]).removeClass('active');
 
@@ -37,6 +42,10 @@ gallery.previous = function(){
    //Trample
    if(this.offset < 0){
       $(this.imgs[this.active]).animate( {'margin-left': -this.param.trample.width, 'margin-right': -this.param.trample.width}, {'duration': this.param.duration.trample, 'easing': this.param.easing.trample, 'complete': function(){gallery.state = 0;} } );
+
+      if(this.param.stable)
+         $(this.imgs[0].parentNode).animate( {'margin-left': '+='+this.param.trample.width}, {'duration': this.param.duration.trample, 'easing': this.param.easing.trample} );
+
       return true;
    }
 }
@@ -45,13 +54,17 @@ gallery.next = function(){
    //Stretch
    if(this.state < 1){
       $(this.imgs[this.active]).animate( {'margin-left': 0, 'margin-right': 0}, {'duration': this.param.duration.stretch, 'easing': this.param.easing.stretch, 'complete': function(){gallery.state=1; gallery.next();} } );
+
+      if(this.param.stable)
+         $(this.imgs[0].parentNode).animate( {'margin-left': '-='+this.param.trample.width}, {'duration': this.param.duration.stretch, 'easing': this.param.easing.stretch} );
+
       return true;
    }
 
    //Move left
    if(this.offset >= 0){
       this.state = 2;
-      $(this.imgs[0].parentNode).animate( {'margin-left': '-='+this.param.image.width}, {'duration': this.param.duration.slide, 'easing': this.param.easing.slide, 'complete': function(){$(gallery.tabs[gallery.active]).removeClass('active'); gallery.active++; $(gallery.imgs[gallery.active]).addClass('active'); $(gallery.tabs[gallery.active]).addClass('active'); gallery.next();}} );
+      $(this.imgs[0].parentNode).animate( {'margin-left': '-='+this.param.image.width}, {'duration': this.param.duration.slide, 'easing': this.param.easing.slide, 'complete': function(){$(gallery.tabs[gallery.active]).removeClass('active'); gallery.active++; $(gallery.imgs[gallery.active]).addClass('active'); $(gallery.tabs[gallery.active]).addClass('active'); gallery.showTab(gallery.active); gallery.next();}} );
 
       $(this.imgs[this.active]).removeClass('active');
 
@@ -62,8 +75,20 @@ gallery.next = function(){
    //Trample
    if(this.offset < 0){
       $(this.imgs[this.active]).animate( {'margin-left': -this.param.trample.width, 'margin-right': -this.param.trample.width}, {'duration': this.param.duration.trample, 'easing': this.param.easing.trample, 'complete': function(){gallery.state = 0;} } );
+
+      if(this.param.stable)
+         $(this.imgs[0].parentNode).animate( {'margin-left': '+='+this.param.trample.width}, {'duration': this.param.duration.trample, 'easing': this.param.easing.trample} );
+
       return true;
    }
+}
+gallery.showTab = function(i){
+   this.hideTabs();
+   var t = $('.tab-content.tab'+i);
+   t.addClass('active');
+}
+gallery.hideTabs = function(){
+   $('.tab-content.active').removeClass('active');
 }
 
 gallery.show = function(i){
@@ -103,6 +128,7 @@ gallery.show = function(i){
 
       $(this.imgs[this.active]).addClass('active');
       $(this.tabs[this.active]).addClass('active');
+      this.showTab(this.active);
    }
 
 }

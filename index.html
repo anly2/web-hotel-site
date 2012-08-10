@@ -8,6 +8,11 @@
    <script type="text/javascript" src="../jquery/jquery.min.js"></script>
    <script type="text/javascript" src="../jquery/jquery-ui.min.js"></script>
    <script type="text/javascript" src="gallery-section.js"></script>
+
+   <script type="text/javascript" src="lightbox.js"></script>
+   <link rel="stylesheet" href="lightbox.css" type="text/css" media="screen">
+   <script type="text/javascript"> $(function(){ $('a[rel=lightbox]').lightBox(); }); </script>
+
 </head>
 <body>
 
@@ -65,12 +70,32 @@
       <div class="body">
          <div class="tabs"></div>
          <div class="header">
-            Conceito E Classe
-            <br />
-            acima de tudo
+            <span class="tab-content tab0">
+               Conceito E Classe
+               <br />
+               acima de tudo
+            </span>
+            <span class="tab-content tab1">
+               Qualidade
+               <br />
+               acima de tudo
+            </span>
+            <span class="tab-content tab2">
+               Estilo
+               <br />
+               acima de tudo
+            </span>
          </div>
          <div class="content">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam eret volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation illamcorper suspicit.
+            <span class="tab-content tab0">
+               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam eret volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation illamcorper suspicit.
+            </span>
+            <span class="tab-content tab1">
+               Lorem Ipsum wisi detraxit aliquando lacus voluptua salutatus! Platonem habitant ludus nisl tritani blandit aliquid iudico docendi admodum vis dicunt senectus elaboraret maluisset ultricies omnis in perfecto dolorem intellegebat aeterno, rationibus deserunt nonummy.
+            </span>
+            <span class="tab-content tab2">
+               Lorem Ipsum nec ferri scripta ridiculus utinam netus! Percipitur condimentum eros dissentias non melius? Phaedrum disputationi legimus euripidis? Nobis utinam cursus singulis consectetuer laudem; Delectus praesent? Hinc pulvinar percipit eius dignissim. Copiosae oportere.
+            </span>
          </div>
       </div>
    </div>
@@ -99,15 +124,15 @@
       <div class="header">Nossas Instalacoes</div>
 
       <span class="first row">
-         <img src="Gallery/0_1.jpg" />
-         <img src="Gallery/0_2.jpg" />
+         <a href="Gallery/0_1.jpg" rel="lightbox"> <img src="Gallery/0_1_thumb.jpg" /> </a>
+         <a href="Gallery/0_2.jpg" rel="lightbox"> <img src="Gallery/0_2_thumb.jpg" /> </a>
       </span>
       <span class="second row">
-         <img src="Gallery/1_1.jpg" />
-         <img src="Gallery/1_2.jpg" />
-         <img src="Gallery/1_3.jpg" />
-         <img src="Gallery/1_4.jpg" />
-         <img src="Gallery/1_5.jpg" />
+         <a href="Gallery/1_1.jpg" rel="lightbox"> <img src="Gallery/1_1_thumb.jpg" /> </a>
+         <a href="Gallery/1_2.jpg" rel="lightbox"> <img src="Gallery/1_2_thumb.jpg" /> </a>
+         <a href="Gallery/1_3.jpg" rel="lightbox"> <img src="Gallery/1_3_thumb.jpg" /> </a>
+         <a href="Gallery/1_4.jpg" rel="lightbox"> <img src="Gallery/1_4_thumb.jpg" /> </a>
+         <a href="Gallery/1_5.jpg" rel="lightbox"> <img src="Gallery/1_5_thumb.jpg" /> </a>
       </span>
    </div>
 </div>
