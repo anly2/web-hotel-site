@@ -7,7 +7,6 @@
 
    <script type="text/javascript" src="../jquery/jquery.min.js"></script>
    <script type="text/javascript" src="../jquery/jquery-ui.min.js"></script>
-   <script type="text/javascript" src="gallery-section.js"></script>
 
    <script type="text/javascript" src="lightbox.js"></script>
    <link rel="stylesheet" href="lightbox.css" type="text/css" media="screen">
@@ -52,55 +51,6 @@
    </ul>
 </div>
 
-<div class="gallery">
-
-   <div class="window">
-      <div class="image-container">
-         <img src="Gallery/0.jpg" />
-         <img src="Gallery/1.jpg" />
-         <img src="Gallery/2.jpg" />
-      </div>
-   </div>
-
-   <div class="logo">
-      <img src="img/logo.png" />
-   </div>
-
-   <div class="caption">
-      <div class="body">
-         <div class="tabs"></div>
-         <div class="header">
-            <span class="tab-content tab0">
-               Conceito E Classe
-               <br />
-               acima de tudo
-            </span>
-            <span class="tab-content tab1">
-               Qualidade
-               <br />
-               acima de tudo
-            </span>
-            <span class="tab-content tab2">
-               Estilo
-               <br />
-               acima de tudo
-            </span>
-         </div>
-         <div class="content">
-            <span class="tab-content tab0">
-               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam eret volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation illamcorper suspicit.
-            </span>
-            <span class="tab-content tab1">
-               Lorem Ipsum wisi detraxit aliquando lacus voluptua salutatus! Platonem habitant ludus nisl tritani blandit aliquid iudico docendi admodum vis dicunt senectus elaboraret maluisset ultricies omnis in perfecto dolorem intellegebat aeterno, rationibus deserunt nonummy.
-            </span>
-            <span class="tab-content tab2">
-               Lorem Ipsum nec ferri scripta ridiculus utinam netus! Percipitur condimentum eros dissentias non melius? Phaedrum disputationi legimus euripidis? Nobis utinam cursus singulis consectetuer laudem; Delectus praesent? Hinc pulvinar percipit eius dignissim. Copiosae oportere.
-            </span>
-         </div>
-      </div>
-   </div>
-
-</div>
 
 <div class="featured">
    <div class="article">
